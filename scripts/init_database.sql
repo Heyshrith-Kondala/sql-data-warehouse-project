@@ -7,7 +7,7 @@ GO
 
 IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'datawarehouse')
 BEGIN
-  ALTER DATABASE datawarehouse SET SINGLE USER WITH ROLLBACK IMMEDIATE:
+  ALTER DATABASE datawarehouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
   DROP DATABASE datawarehouse;
 END;
 GO
@@ -15,7 +15,10 @@ GO
 -- Create Databases and schemas 
 
 CREATE DATABASE datawarehouse;
+GO
+
 USE datawarehouse;
+GO
 
 CREATE SCHEMA bronze;
 GO
